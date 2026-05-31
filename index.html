@@ -1,336 +1,403 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Momentum Clone</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dashboard</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
-body {
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body{
+    min-height:100vh;
+    background-size:cover;
+    background-position:center;
+    color:white;
 }
 
-.overlay {
-  width: 100%;
-  min-height: 100vh;
-  background: rgba(0,0,0,0.45);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.overlay{
+    min-height:100vh;
+    background:rgba(0,0,0,0.45);
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.container {
-  text-align: center;
-  width: 90%;
-  max-width: 700px;
+.container{
+    width:90%;
+    max-width:700px;
+    text-align:center;
 }
 
-#clock {
-  font-size: 5rem;
-  font-weight: bold;
+.hidden{
+    display:none;
 }
 
-#greeting {
-  margin-top: 15px;
-  font-size: 2rem;
+#clock{
+    font-size:5rem;
+    font-weight:bold;
 }
 
-.hidden {
-  display: none;
+#greeting{
+    margin-top:15px;
+    font-size:2rem;
 }
 
-#login-form input,
-#todo-form input {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  width: 300px;
-  font-size: 1rem;
+#weather{
+    margin-top:15px;
+    font-size:1.1rem;
 }
 
-#login-form button,
-#todo-form button {
-  padding: 12px 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-left: 5px;
+form{
+    margin-top:20px;
 }
 
-#todo-form {
-  margin-top: 30px;
+input{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    width:250px;
 }
 
-#todo-list {
-  list-style: none;
-  margin-top: 20px;
+button{
+    padding:12px 16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
 }
 
-#todo-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255,255,255,0.15);
-  margin: 10px 0;
-  padding: 10px 15px;
-  border-radius: 10px;
+#logout-btn{
+    margin-top:15px;
+    background:#e74c3c;
+    color:white;
 }
 
-.delete-btn {
-  background: crimson;
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
+#todo-list{
+    list-style:none;
+    margin-top:20px;
 }
 
-#weather {
-  margin-top: 20px;
-  font-size: 1.1rem;
+#todo-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:10px 0;
+    padding:10px 15px;
+    background:rgba(255,255,255,0.15);
+    border-radius:10px;
+}
+
+.delete-btn{
+    background:crimson;
+    color:white;
 }
 </style>
 </head>
 
 <body>
+
 <div class="overlay">
-  <div class="container">
+<div class="container">
 
-    <h1 id="clock">00:00:00</h1>
+<h1 id="clock">00:00:00</h1>
 
-    <form id="login-form">
-      <input
-        type="text"
-        placeholder="이름을 입력하세요"
-        required
-      />
-      <button>로그인</button>
-    </form>
+<form id="login-form">
+    <input type="text" placeholder="이름 입력" required>
+    <button type="submit">로그인</button>
+</form>
 
-    <h2 id="greeting" class="hidden"></h2>
+<h2 id="greeting" class="hidden"></h2>
 
-    <div id="weather"></div>
+<button id="logout-btn" class="hidden">
+    로그아웃
+</button>
 
-    <form id="todo-form" class="hidden">
-      <input
-        type="text"
-        placeholder="할 일을 입력하세요"
-        required
-      />
-      <button>추가</button>
-    </form>
+<div id="weather"></div>
 
-    <ul id="todo-list"></ul>
+<form id="todo-form" class="hidden">
+    <input type="text" placeholder="할 일을 입력하세요" required>
+    <button type="submit">추가</button>
+</form>
 
-  </div>
+<ul id="todo-list"></ul>
+
+</div>
 </div>
 
 <script>
 
+//배경
 
-const images = [
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-  "https://images.unsplash.com/photo-1518837695005-2083093ee35b",
-  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-  "https://images.unsplash.com/photo-1470770841072-f978cf4d019e"
+const backgrounds = [
+"https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600",
+"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600",
+"https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1600",
+"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600",
+"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1600"
 ];
 
-const randomImage =
-  images[Math.floor(Math.random() * images.length)];
+const randomBg =
+backgrounds[Math.floor(Math.random()*backgrounds.length)];
 
 document.body.style.backgroundImage =
-  `url(${randomImage}?auto=format&fit=crop&w=1500&q=80)`;
+`url(${randomBg})`;
 
 
+//dom
 
-const clock = document.querySelector("#clock");
+const clock = document.getElementById("clock");
 
-function updateClock() {
-  const now = new Date();
+const loginForm = document.getElementById("login-form");
+const loginInput = loginForm.querySelector("input");
 
-  const h = String(now.getHours()).padStart(2, "0");
-  const m = String(now.getMinutes()).padStart(2, "0");
-  const s = String(now.getSeconds()).padStart(2, "0");
+const greeting = document.getElementById("greeting");
 
-  clock.innerText = `${h}:${m}:${s}`;
+const logoutBtn = document.getElementById("logout-btn");
+
+const todoForm = document.getElementById("todo-form");
+const todoInput = todoForm.querySelector("input");
+
+const todoList = document.getElementById("todo-list");
+
+const weatherDiv = document.getElementById("weather");
+
+
+//시계
+
+function updateClock(){
+    const now = new Date();
+
+    const h =
+    String(now.getHours()).padStart(2,"0");
+
+    const m =
+    String(now.getMinutes()).padStart(2,"0");
+
+    const s =
+    String(now.getSeconds()).padStart(2,"0");
+
+    clock.innerText = `${h}:${m}:${s}`;
 }
 
 updateClock();
-setInterval(updateClock, 1000);
+setInterval(updateClock,1000);
 
 
-
-const loginForm = document.querySelector("#login-form");
-const loginInput = loginForm.querySelector("input");
-
-const greeting = document.querySelector("#greeting");
+//로그인
 
 const USERNAME_KEY = "username";
 
-function paintGreeting(name) {
-  greeting.innerText = `안녕하세요, ${name}님 👋`;
-  greeting.classList.remove("hidden");
-  loginForm.classList.add("hidden");
-  todoForm.classList.remove("hidden");
+function paintGreeting(username){
+
+    greeting.innerText =
+    `안녕하세요 ${username}님 👋`;
+
+    greeting.classList.remove("hidden");
+
+    loginForm.classList.add("hidden");
+
+    todoForm.classList.remove("hidden");
+
+    logoutBtn.classList.remove("hidden");
 }
 
-function onLoginSubmit(e) {
-  e.preventDefault();
+function handleLogin(event){
+    event.preventDefault();
 
-  const username = loginInput.value;
+    const username = loginInput.value;
 
-  localStorage.setItem(USERNAME_KEY, username);
+    localStorage.setItem(
+        USERNAME_KEY,
+        username
+    );
 
-  paintGreeting(username);
+    paintGreeting(username);
 }
 
-loginForm.addEventListener("submit", onLoginSubmit);
+loginForm.addEventListener(
+    "submit",
+    handleLogin
+);
 
 const savedUsername =
-  localStorage.getItem(USERNAME_KEY);
+localStorage.getItem(USERNAME_KEY);
 
-if (savedUsername) {
-  paintGreeting(savedUsername);
+if(savedUsername){
+    paintGreeting(savedUsername);
 }
 
+function logout(){
+
+    localStorage.removeItem(USERNAME_KEY);
+
+    location.reload();
+}
+
+logoutBtn.addEventListener(
+    "click",
+    logout
+);
 
 
-const todoForm = document.querySelector("#todo-form");
-const todoInput = todoForm.querySelector("input");
-const todoList = document.querySelector("#todo-list");
+//투두
 
 const TODOS_KEY = "todos";
 
 let todos = [];
 
-function saveTodos() {
-  localStorage.setItem(
-    TODOS_KEY,
-    JSON.stringify(todos)
-  );
+function saveTodos(){
+    localStorage.setItem(
+        TODOS_KEY,
+        JSON.stringify(todos)
+    );
 }
 
-function deleteTodo(e) {
-  const li = e.target.parentElement;
+function deleteTodo(event){
 
-  todos = todos.filter(
-    todo => todo.id !== Number(li.id)
-  );
+    const li =
+    event.target.parentElement;
 
-  saveTodos();
-  li.remove();
+    todos = todos.filter(
+        todo => todo.id !== Number(li.id)
+    );
+
+    saveTodos();
+
+    li.remove();
 }
 
-function paintTodo(todoObj) {
-  const li = document.createElement("li");
-  li.id = todoObj.id;
+function paintTodo(todoObj){
 
-  const span = document.createElement("span");
-  span.innerText = todoObj.text;
+    const li =
+    document.createElement("li");
 
-  const button = document.createElement("button");
-  button.innerText = "삭제";
-  button.className = "delete-btn";
+    li.id = todoObj.id;
 
-  button.addEventListener("click", deleteTodo);
+    const span =
+    document.createElement("span");
 
-  li.appendChild(span);
-  li.appendChild(button);
+    span.innerText = todoObj.text;
 
-  todoList.appendChild(li);
+    const btn =
+    document.createElement("button");
+
+    btn.innerText = "삭제";
+
+    btn.className = "delete-btn";
+
+    btn.addEventListener(
+        "click",
+        deleteTodo
+    );
+
+    li.appendChild(span);
+    li.appendChild(btn);
+
+    todoList.appendChild(li);
 }
 
-function handleTodoSubmit(e) {
-  e.preventDefault();
+function handleTodoSubmit(event){
 
-  const newTodo = todoInput.value;
+    event.preventDefault();
 
-  todoInput.value = "";
+    const newTodo =
+    todoInput.value;
 
-  const todoObj = {
-    text: newTodo,
-    id: Date.now()
-  };
+    todoInput.value = "";
 
-  todos.push(todoObj);
+    const todoObj = {
+        text:newTodo,
+        id:Date.now()
+    };
 
-  paintTodo(todoObj);
-  saveTodos();
+    todos.push(todoObj);
+
+    paintTodo(todoObj);
+
+    saveTodos();
 }
 
 todoForm.addEventListener(
-  "submit",
-  handleTodoSubmit
+    "submit",
+    handleTodoSubmit
 );
 
 const savedTodos =
-  localStorage.getItem(TODOS_KEY);
+localStorage.getItem(TODOS_KEY);
 
-if (savedTodos) {
-  const parsedTodos = JSON.parse(savedTodos);
+if(savedTodos){
 
-  todos = parsedTodos;
+    const parsedTodos =
+    JSON.parse(savedTodos);
 
-  parsedTodos.forEach(paintTodo);
+    todos = parsedTodos;
+
+    parsedTodos.forEach(
+        paintTodo
+    );
 }
 
 
-
+//날씨
 
 const API_KEY = "1ad681f81bcf60c5ced2dc24fa2fdf37";
 
-function onGeoSuccess(position) {
-  const lat = position.coords.latitude;
-  const lon = position.coords.longitude;
+function onGeoSuccess(position){
 
-  const url =
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+    const lat =
+    position.coords.latitude;
 
-  fetch(url)
-    .then(res => res.json())
+    const lon =
+    position.coords.longitude;
+
+    const url =
+`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+
+    fetch(url)
+    .then(response => response.json())
     .then(data => {
-      const city = data.name;
-      const temp = data.main.temp;
-      const weather = data.weather[0].main;
 
-      document.querySelector(
-        "#weather"
-      ).innerText =
+        if(data.cod !== 200){
+            weatherDiv.innerText =
+            "날씨 정보를 불러올 수 없습니다.";
+            return;
+        }
+
+        const city = data.name;
+
+        const temp =
+        Math.round(data.main.temp);
+
+        const weather =
+        data.weather[0].main;
+
+        weatherDiv.innerText =
         `📍 ${city} | 🌡️ ${temp}°C | ☁️ ${weather}`;
     })
     .catch(() => {
-      document.querySelector(
-        "#weather"
-      ).innerText =
-        "날씨 정보를 불러올 수 없습니다.";
+
+        weatherDiv.innerText =
+        "날씨 로딩 실패";
     });
 }
 
-function onGeoError() {
-  document.querySelector(
-    "#weather"
-  ).innerText =
-    "위치 정보를 허용해주세요.";
+function onGeoError(){
+
+    weatherDiv.innerText =
+    "위치 권한을 허용해주세요.";
 }
 
 navigator.geolocation.getCurrentPosition(
-  onGeoSuccess,
-  onGeoError
+    onGeoSuccess,
+    onGeoError
 );
+
 </script>
+
 </body>
 </html>
