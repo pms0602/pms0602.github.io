@@ -1,0 +1,5 @@
+title: My Tech Blog
+description: 개발하면서 배운 내용을 기록하는 기술 블로그
+url: ""
+baseurl: ""
+markdown: kramdown

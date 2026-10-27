@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  x64-mingw-ucrt
+
+DEPENDENCIES
+
+CHECKSUMS
+  bundler (4.0.23) sha256=407ba8a1d928f412847f819aa5f8b6aef7c59fb51feb517112af8a165487287b
+
+BUNDLED WITH
+  4.0.23
