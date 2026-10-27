@@ -1,26 +1,125 @@
 ---
 layout: default
-title: Home
+title: 홈
+description: 개발과 보안, 배움의 과정을 기록하는 기술 블로그
 ---
 
-<section class="hero">
-  <p>MY DEVELOPER JOURNAL</p>
-  <h1>배우고, 만들고, 기록하다.</h1>
-  <p>개발하면서 배운 지식과 경험을 기록하는 공간입니다.</p>
+<section class="hero section-wrap">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="status-dot"></span> STUDENT · DEVELOPER · CURIOUS MIND</p>
+    <h1>호기심을 코드로,<br><span class="gradient-text">경험을 기록으로.</span></h1>
+    <p class="hero-description">개발을 배우고, 시스템을 탐구하고, 실패에서 배운 것을 기록합니다. 작은 실험이 쌓여 나만의 지도가 되도록.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#posts">기록 둘러보기 <span aria-hidden="true">↘</span></a>
+      <a class="button button-quiet" href="#about">나는 누구인가</a>
+    </div>
+    <div class="hero-meta">
+      <span><strong>{{ site.posts.size | plus: 0 | prepend: "" }}</strong>개의 기록</span>
+      <span class="meta-divider"></span>
+      <span>꾸준히 배우는 중</span>
+    </div>
+  </div>
+  <div class="hero-art" aria-label="테마에 따라 해 또는 달이 표시되는 장식">
+    <div class="orbit orbit-one"></div>
+    <div class="orbit orbit-two"></div>
+    <div class="star star-one">✦</div><div class="star star-two">✧</div><div class="star star-three">·</div>
+    <div class="hero-celestial">
+      <div class="hero-sun"></div>
+      <div class="hero-moon"><span></span></div>
+    </div>
+    <div class="art-caption"><span class="caption-line"></span><span>DAYLIGHT / MOONLIGHT</span></div>
+  </div>
+  <div class="hero-bottom-label">SCROLL TO EXPLORE <span>↓</span></div>
 </section>
 
-<section>
-  <h2>Latest Posts</h2>
+<section class="intro-section section-wrap" id="about">
+  <div class="section-kicker">01 / ABOUT</div>
+  <div class="intro-grid">
+    <h2>기록은 지식의<br>또 다른 형태.</h2>
+    <div class="intro-copy">
+      <p>안녕하세요. 컴퓨터공학을 공부하며 소프트웨어와 보안 분야를 탐구하는 박민승입니다.</p>
+      <p>단순히 정답을 찾는 것보다 <strong>왜 동작하는지 이해하고, 직접 실험하고, 다른 사람에게 설명할 수 있도록 정리하는 과정</strong>을 중요하게 생각합니다.</p>
+      <p class="muted">이 블로그는 학습 노트이자 실험 기록입니다. 아직 완성되지 않은 생각도 이곳에서 조금씩 구체화합니다.</p>
+    </div>
+  </div>
+  
+  <div class="profile-list">
+    <div class="profile-heading">
+      <span class="profile-label">EDUCATION & ACTIVITIES</span>
+      <p>배우고 경험하며 성장하는 과정</p>
+    </div>
 
-  {% for post in site.posts %}
-    <article class="post-card">
-      <p>{{ post.date | date: "%Y.%m.%d" }}</p>
-      <h3>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h3>
-      <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+    <article class="profile-item">
+      <div class="profile-icon">ED</div>
+      <div class="profile-info">
+        <span class="profile-type">UNIVERSITY</span>
+        <h3>한국외국어대학교</h3>
+        <p>컴퓨터공학부</p>
+      </div>
+      <span class="profile-date">2026.03 – 현재</span>
     </article>
-  {% else %}
-    <p>아직 작성한 게시글이 없습니다.</p>
-  {% endfor %}
+
+    <article class="profile-item">
+      <div class="profile-icon">HS</div>
+      <div class="profile-info">
+        <span class="profile-type">BOOTCAMP</span>
+        <h3>HSPACE Knights Frontier</h3>
+        <p>Security &amp; Development</p>
+      </div>
+      <span class="profile-date">2026.10 – 현재</span>
+    </article>
+  </div>
+
+  <div class="principles">
+    <article><span class="principle-number">01</span><h3>Build</h3><p>직접 만들며 원리를 익힙니다.</p></article>
+    <article><span class="principle-number">02</span><h3>Break</h3><p>실패와 취약점에서 배웁니다.</p></article>
+    <article><span class="principle-number">03</span><h3>Document</h3><p>배운 것을 다시 꺼낼 수 있게 기록합니다.</p></article>
+  </div>
+</section>
+
+<section class="category-section section-wrap" id="categories">
+  <div class="section-heading">
+    <div><div class="section-kicker">02 / CATEGORIES</div><h2>관심사의 지도<span class="heading-period">.</span></h2></div>
+    <p>여섯 가지 주제로 배움의 흔적을 나눕니다.</p>
+  </div>
+  <div class="category-grid">
+    <button class="category-card" data-filter="개발" type="button"><span class="category-index">01</span><span class="category-icon">⌘</span><span class="category-title">개발</span><span class="category-desc">Code, projects & engineering</span><span class="category-arrow">↗</span></button>
+    <button class="category-card" data-filter="CTF/Wargame" type="button"><span class="category-index">02</span><span class="category-icon">⌁</span><span class="category-title">CTF / Wargame</span><span class="category-desc">Challenges, write-ups & tactics</span><span class="category-arrow">↗</span></button>
+    <button class="category-card" data-filter="Bug Bounty" type="button"><span class="category-index">03</span><span class="category-icon">⌕</span><span class="category-title">Bug Bounty</span><span class="category-desc">Web security & responsible disclosure</span><span class="category-arrow">↗</span></button>
+    <button class="category-card" data-filter="블로그/기술문서" type="button"><span class="category-index">04</span><span class="category-icon">≡</span><span class="category-title">블로그 / 기술문서</span><span class="category-desc">Concepts worth remembering</span><span class="category-arrow">↗</span></button>
+    <button class="category-card" data-filter="논문/컨퍼런스" type="button"><span class="category-index">05</span><span class="category-icon">⌘</span><span class="category-title">논문 / 컨퍼런스</span><span class="category-desc">Research notes & conference reviews</span><span class="category-arrow">↗</span></button>
+    <button class="category-card" data-filter="공모전/자격증" type="button"><span class="category-index">06</span><span class="category-icon">✳</span><span class="category-title">공모전 / 자격증</span><span class="category-desc">Goals, projects & milestones</span><span class="category-arrow">↗</span></button>
+  </div>
+</section>
+
+<section class="posts-section section-wrap" id="posts">
+  <div class="section-heading posts-heading">
+    <div><div class="section-kicker">03 / FIELD NOTES</div><h2>최근 기록<span class="heading-period">.</span></h2></div>
+    <div class="post-tools">
+      <label class="search-box"><span aria-hidden="true">⌕</span><input id="post-search" type="search" placeholder="기록 검색..." aria-label="게시글 검색"></label>
+      <button class="filter-reset is-active" data-filter="all" type="button">전체 보기</button>
+    </div>
+  </div>
+  <div class="active-filter-note" id="filter-note" aria-live="polite">모든 카테고리의 기록을 보여줍니다.</div>
+  <div class="post-grid" id="post-grid">
+    {% for post in site.posts %}
+    <article class="post-card" data-category="{{ post.category | default: post.categories.first | escape }}" data-search="{{ post.title | escape }} {{ post.excerpt | strip_html | escape }} {{ post.tags | join: ' ' | escape }}">
+      <a class="post-card-link" href="{{ post.url | relative_url }}">
+        <div class="post-card-top"><span class="post-category">{{ post.category | default: post.categories.first }}</span><span class="post-arrow">↗</span></div>
+        <h3>{{ post.title }}</h3>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 130 }}</p>
+        <div class="post-card-bottom"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time><span>{{ post.content | number_of_words }} words</span></div>
+      </a>
+    </article>
+    {% else %}
+    <div class="empty-posts"><span class="empty-symbol">✳</span><h3>첫 기록을 기다리는 중</h3><p>_posts 폴더에 Markdown 글을 추가하면 이곳에 표시됩니다.</p></div>
+    {% endfor %}
+  </div>
+  <p class="no-results" id="no-results" hidden>검색 결과가 없습니다. 다른 키워드나 카테고리를 선택해 보세요.</p>
+</section>
+
+<section class="quote-section section-wrap">
+  <span class="quote-mark">“</span>
+  <blockquote>오늘 이해한 작은 원리가<br>내일 만드는 큰 시스템이 된다.</blockquote>
+  <p>KEEP LEARNING. KEEP BUILDING.</p>
 </section>

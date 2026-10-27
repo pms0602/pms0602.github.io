@@ -1,0 +1,18 @@
+<footer class="site-footer" id="contact">
+  <div class="footer-inner">
+    <div>
+      <a class="footer-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <p>배우고, 실험하고, 기록하기.</p>
+    </div>
+    <div class="footer-links">
+      {% if site.author.github and site.author.github != "YOUR-GITHUB-ID" %}
+      <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      {% endif %}
+      {% if site.author.email != "" %}
+      <a href="mailto:{{ site.author.email }}">Email ↗</a>
+      {% endif %}
+      <a href="{{ '/feed.xml' | relative_url }}">RSS ↗</a>
+    </div>
+    <p class="copyright">© {{ site.time | date: "%Y" }} {{ site.author.name }}. Built with Jekyll.</p>
+  </div>
+</footer>

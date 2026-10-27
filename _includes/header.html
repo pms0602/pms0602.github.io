@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} 홈">
+      <span class="brand-mark">M<span>.</span></span>
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+    <nav class="main-nav" aria-label="주 메뉴">
+      <a href="{{ '/' | relative_url }}#about">소개</a>
+      <a href="{{ '/' | relative_url }}#categories">카테고리</a>
+      <a href="{{ '/' | relative_url }}#posts">기록</a>
+      <a href="{{ '/' | relative_url }}#contact">연락</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="theme-toggle" aria-label="다크 모드로 전환" title="테마 전환">
+      <span class="toggle-track">
+        <span class="celestial celestial-sun" aria-hidden="true"></span>
+        <span class="celestial celestial-moon" aria-hidden="true"></span>
+        <span class="toggle-knob" aria-hidden="true"></span>
+      </span>
+    </button>
+    <button class="menu-toggle" type="button" id="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

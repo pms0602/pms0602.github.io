@@ -1,5 +1,25 @@
-title: My Tech Blog
-description: 개발하면서 배운 내용을 기록하는 기술 블로그
-url: ""
+title: "아농허농의 집"
+description: "개발과 보안, 배움의 과정을 기록하는 기술 블로그"
+url: "https://github.com/pms0602/pms0602.github.io.git"
 baseurl: ""
+lang: ko
+timezone: Asia/Seoul
 markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+author:
+  name: "박민승"
+  role: "Computer Science Student"
+  bio: "코드의 안쪽을 탐구하고, 배운 것을 기록합니다."
+  github: "pms0602"
+  email: "pms0602@hufs.ac.kr"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

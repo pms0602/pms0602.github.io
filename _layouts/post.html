@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="article section-wrap">
+  <div class="article-back"><a href="{{ '/' | relative_url }}#posts">← 모든 기록으로</a></div>
+  <header class="article-header">
+    <span class="post-category">{{ page.category | default: page.categories.first }}</span>
+    <h1>{{ page.title }}</h1>
+    <p class="article-description">{{ page.description | default: page.excerpt | strip_html }}</p>
+    <div class="article-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time>
+      <span>·</span><span>{{ content | number_of_words }} words</span>
+      {% if page.tags %}<span>·</span><span>{{ page.tags | join: " / " }}</span>{% endif %}
+    </div>
+  </header>
+  <div class="article-layout">
+    <aside class="article-aside">
+      <div class="toc-title">ON THIS PAGE</div>
+      <nav id="toc" aria-label="목차"><p class="muted">목차를 만드는 중...</p></nav>
+      <button class="copy-link" id="copy-link" type="button">링크 복사 ↗</button>
+    </aside>
+    <div class="article-content" id="article-content">
+      {{ content }}
+    </div>
+  </div>
+  <div class="article-end"><span>END OF NOTE</span><a href="{{ '/' | relative_url }}#posts">다른 기록 읽기 ↗</a></div>
+</article>
