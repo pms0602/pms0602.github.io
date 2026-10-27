@@ -1,75 +1,116 @@
-# 아농허농의 집 — Jekyll + GitHub Pages
+# 아농허농의 집
 
-개발·보안·기술 학습 기록을 위한 커스텀 Jekyll 블로그입니다.
+[Website](https://pms0602.github.io/) · [GitHub](https://github.com/pms0602) · [Jekyll](https://jekyllrb.com/)
 
-## 1. GitHub Pages란?
+컴퓨터공학을 공부하며 소프트웨어와 보안 분야를 탐구하고, 학습 과정과 실험 결과를 기록하는 개인 기술 블로그입니다. 프로그래밍, 알고리즘, 컴퓨터 시스템, 인공지능 등 다양한 주제를 공부하며 얻은 지식을 한국어로 정리합니다.
 
-GitHub Pages는 GitHub 저장소의 정적 파일(HTML, CSS, JavaScript 등)을 웹사이트로 공개하는 호스팅 기능입니다. 사용자 사이트 저장소를 `YOUR-GITHUB-ID.github.io`로 만들면 `https://YOUR-GITHUB-ID.github.io` 주소를 사용할 수 있습니다. Jekyll을 사용하면 Markdown 게시글을 HTML 페이지로 생성할 수 있습니다.
+- **Website:** https://pms0602.github.io/
+- **GitHub:** https://github.com/pms0602
+- **Maintainer:** [@pms0602](https://github.com/pms0602)
 
-## 2. 설정하기
+## 프로젝트 소개
 
-1. GitHub에 `YOUR-GITHUB-ID.github.io`라는 이름의 저장소를 만듭니다.
-2. 이 프로젝트 파일을 해당 저장소의 `main` 브랜치에 push합니다.
-3. `_config.yml`의 `url`과 `author.github` 값을 본인 계정에 맞게 바꿉니다.
-4. GitHub 저장소의 **Settings → Pages**에서 배포 소스를 확인합니다. GitHub Actions/Jekyll 빌드 또는 `Deploy from a branch` 방식 중 저장소 설정에 맞는 방식을 선택합니다.
-5. 빌드가 완료되면 `https://YOUR-GITHUB-ID.github.io`에 접속합니다.
+이 저장소는 Jekyll과 GitHub Pages를 기반으로 운영되는 개인 기술 블로그의 소스 코드를 포함합니다.
 
-> 사용자 사이트 저장소(`YOUR-GITHUB-ID.github.io`)는 `baseurl: ""`을 사용합니다. `my-tech-blog`처럼 프로젝트 사이트로 배포한다면 `url`은 사용자 사이트 도메인으로 두고 `baseurl: "/my-tech-blog"`로 설정해야 합니다.
+단순히 학습 내용을 기록하는 데 그치지 않고, 배운 개념을 직접 구현하고 실험하며 이해한 내용을 다른 사람도 읽기 쉽게 정리하는 것을 목표로 합니다.
 
-## 3. 로컬에서 실행하기
+주요 기록 내용은 다음과 같습니다.
 
-Ruby와 Devkit이 설치되어 있어야 합니다.
+- 프로그래밍 언어와 알고리즘 학습
+- 컴퓨터공학 및 선형대수 등 전공 지식 정리
+- 소프트웨어 개발 프로젝트와 구현 과정
+- 인공지능 및 컴퓨터 시스템 관련 탐구
+- 정보보안과 개발 도구 활용 기록
+- 학습 과정에서 발생한 오류와 해결 방법
+
+## 프로젝트 현황
+
+| 항목 | 현황 |
+|---|---|
+| 프로젝트 유형 | 개인 기술 블로그 |
+| 운영 방식 | 개인 운영 |
+| 주요 언어 | 한국어 |
+| 정적 사이트 생성기 | Jekyll |
+| 배포 방식 | GitHub Pages |
+| 소스 코드 관리 | Git / GitHub |
+
+### 콘텐츠 분야
+
+| 분야 | 주요 내용 |
+|---|---|
+| 프로그래밍 | C, C++, Python 등 프로그래밍 학습 |
+| 컴퓨터공학 | 자료구조, 알고리즘, 컴퓨터 시스템 |
+| 수학 및 전공 기초 | 선형대수, 이산수학 등 |
+| 인공지능 | 머신러닝, 딥러닝 및 AI 기술 탐구 |
+| 정보보안 | 보안 개념, 취약점 및 보안 도구 학습 |
+| 프로젝트 | 소프트웨어 구현, 하드웨어 실습 및 개발 기록 |
+
+※ 콘텐츠 분야는 블로그의 학습 방향을 기준으로 작성했으며, 실제 게시물 현황에 따라 변경할 수 있습니다.
+
+## 기술 스택
+
+- **Static Site Generator:** Jekyll
+- **Hosting:** GitHub Pages
+- **Templating:** Liquid
+- **Markup:** HTML, Markdown
+- **Styling:** CSS
+- **Version Control:** Git, GitHub
+
+## 로컬 실행
+
+Ruby와 Bundler가 설치된 환경에서 다음 명령어를 실행합니다.
 
 ```bash
+git clone https://github.com/pms0602/pms0602.github.io.git
+cd pms0602.github.io
 bundle install
 bundle exec jekyll serve
 ```
 
-브라우저에서 `http://127.0.0.1:4000`을 엽니다.
+브라우저에서 [http://127.0.0.1:4000/](http://127.0.0.1:4000/)에 접속하면 로컬 사이트를 확인할 수 있습니다.
 
-## 4. 게시글 추가하기
+## 저장소 구조
 
-`_posts` 폴더에 `YYYY-MM-DD-title.md` 형식으로 파일을 만듭니다.
-
-```markdown
----
-layout: post
-title: "게시글 제목"
-date: 2026-10-27 18:00:00 +0900
-category: "개발"
-tags: [JavaScript, 학습]
-description: "게시글 요약"
----
-
-## 첫 번째 소제목
-
-여기에 Markdown으로 글을 작성합니다.
+```text
+.
+├── _includes/       # 공통 헤더 및 푸터 등 재사용 요소
+├── _layouts/        # 페이지 및 게시물 레이아웃
+├── _posts/          # Markdown 기반 게시물
+├── assets/
+│   ├── css/         # 스타일시트
+│   └── js/          # JavaScript 파일
+├── _config.yml      # Jekyll 설정
+├── index.html       # 메인 페이지
+├── Gemfile          # Ruby 의존성 정의
+└── README.md        # 프로젝트 문서
 ```
 
-카테고리는 아래 여섯 가지 이름 중 하나를 사용하세요. 필터는 이름이 정확히 일치해야 합니다.
+## 개발 및 유지관리
 
-- 개발
-- CTF/Wargame
-- Bug Bounty
-- 블로그/기술문서
-- 논문/컨퍼런스
-- 공모전/자격증
+블로그는 학습 내용을 꾸준히 기록하고, 새로운 기술을 직접 실험하며, 기존 문서를 개선하는 방식으로 운영합니다.
 
-## 5. 변경 사항 올리기
+주요 유지관리 작업은 다음과 같습니다.
 
-```bash
-git add .
-git commit -m "Update blog"
-git push
-```
+- 학습 내용과 프로젝트 개발 과정 기록
+- 코드 및 예제의 정확성 확인
+- 페이지 레이아웃과 반응형 디자인 개선
+- CSS 및 JavaScript 기능 유지보수
+- Jekyll 빌드 오류 및 배포 상태 확인
+- 문서 구조와 가독성 개선
 
-GitHub Pages 빌드가 끝나면 사이트에 반영됩니다.
+### 개선 계획
 
-## 6. 포함된 기능
+- 학습 주제별 게시물 분류 및 탐색 기능 개선
+- 검색과 태그 기능 확장
+- 모바일 환경에서의 사용성 개선
+- 코드 예제와 프로젝트 설명 보강
+- 새로운 소프트웨어 및 보안 프로젝트 추가
+- 블로그 디자인과 사용자 경험 지속 개선
 
-- 직접 만든 반응형 레이아웃
-- 라이트/다크 모드와 테마 저장
-- 해/달이 반시계 방향으로 회전하는 테마 전환 효과
-- 카테고리 필터와 게시글 검색
-- 게시글 상세 레이아웃과 자동 목차
-- RSS 피드 및 SEO 메타데이터
+## 기여 및 문의
+
+오탈자, 개선 의견, 기술적인 오류 또는 블로그와 관련된 제안은 [GitHub 저장소](https://github.com/pms0602/pms0602.github.io)를 통해 전달할 수 있습니다.
+
+## 라이선스
+
+현재 별도의 라이선스가 명시되어 있지 않습니다. 코드 및 콘텐츠의 재사용이나 재배포가 필요한 경우 사전에 문의해 주세요.
