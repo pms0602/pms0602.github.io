@@ -92,11 +92,11 @@ button, input { font-size: inherit; }
 }
 
 .brand-mark .monogram-a {
-  transform: translateY(2px);
+  transform: translateY(4px);
 }
 
 .brand-mark .monogram-h {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 .brand-name { font-size: 18px; font-weight: 800; letter-spacing: .09em; }
 .main-nav { display: flex; gap: 30px; margin-left: auto; }
