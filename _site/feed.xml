@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2026-10-27T21:39:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">아농허농의 집</title><subtitle>개발과 보안, 배움의 과정을 기록하는 기술 블로그</subtitle><author><name>박민승</name><email>pms0602@hufs.ac.kr</email></author><entry><title type="html">개발 환경을 만들고 첫 기록 남기기</title><link href="http://localhost:4000/%EA%B0%9C%EB%B0%9C/starting-development/" rel="alternate" type="text/html" title="개발 환경을 만들고 첫 기록 남기기" /><published>2026-10-27T10:00:00+09:00</published><updated>2026-10-27T10:00:00+09:00</updated><id>http://localhost:4000/%EA%B0%9C%EB%B0%9C/starting-development</id><content type="html" xml:base="http://localhost:4000/%EA%B0%9C%EB%B0%9C/starting-development/"><![CDATA[<h2 id="왜-기술-블로그를-만들었을까">왜 기술 블로그를 만들었을까?</h2>
+
+<p>공부한 내용을 머릿속에만 두면 시간이 지난 뒤 다시 이해하기 어렵습니다. 그래서 배운 원리와 시행착오를 글로 남기기 위해 기술 블로그를 만들었습니다.</p>
+
+<h2 id="github-pages와-jekyll">GitHub Pages와 Jekyll</h2>
+
+<p>GitHub Pages는 GitHub 저장소에 있는 정적 파일을 웹사이트로 공개할 수 있는 호스팅 서비스입니다. Jekyll은 Markdown 게시글과 레이아웃을 HTML 페이지로 만들어 줍니다.</p>
+
+<h2 id="앞으로의-기록-방식">앞으로의 기록 방식</h2>
+
+<ul>
+  <li>문제를 만난 상황과 원인을 먼저 적습니다.</li>
+  <li>해결 과정과 핵심 코드를 정리합니다.</li>
+  <li>참고한 공식 문서나 자료를 함께 남깁니다.</li>
+</ul>
+
+<p>이 블로그가 결과만 모아 놓는 공간이 아니라, 이해에 도달하기까지의 과정도 담는 기록장이 되기를 바랍니다.</p>]]></content><author><name>박민승</name><email>pms0602@hufs.ac.kr</email></author><category term="개발" /><category term="Jekyll" /><category term="GitHub Pages" /><category term="시작" /><summary type="html"><![CDATA[Jekyll과 GitHub Pages로 기술 블로그를 구축하며 정리한 첫 번째 기록입니다.]]></summary></entry><entry><title type="html">CTF 문제를 풀 때 먼저 확인할 것들</title><link href="http://localhost:4000/ctf/wargame/ctf-warmup/" rel="alternate" type="text/html" title="CTF 문제를 풀 때 먼저 확인할 것들" /><published>2026-10-26T19:30:00+09:00</published><updated>2026-10-26T19:30:00+09:00</updated><id>http://localhost:4000/ctf/wargame/ctf-warmup</id><content type="html" xml:base="http://localhost:4000/ctf/wargame/ctf-warmup/"><![CDATA[<h2 id="문제-설명부터-읽기">문제 설명부터 읽기</h2>
+
+<p>문제 설명에는 입력 형식, 제한 조건, 제공된 파일, 목표가 담겨 있습니다. 먼저 이 정보를 정리하면 불필요한 시도를 줄일 수 있습니다.</p>
+
+<h2 id="기본-점검-순서">기본 점검 순서</h2>
+
+<ol>
+  <li>문제에서 요구하는 목표와 출력 형식을 확인합니다.</li>
+  <li>제공 파일의 종류와 메타데이터를 살펴봅니다.</li>
+  <li>관찰한 사실과 가설을 구분해 기록합니다.</li>
+  <li>풀이가 끝나면 핵심 원리와 막혔던 지점을 write-up으로 남깁니다.</li>
+</ol>
+
+<h2 id="학습할-때-지킬-점">학습할 때 지킬 점</h2>
+
+<p>실습은 허가된 워게임 환경에서만 진행합니다. 풀이 결과만 복사하기보다 왜 그 접근이 통하는지 설명할 수 있도록 정리하는 것이 중요합니다.</p>]]></content><author><name>박민승</name><email>pms0602@hufs.ac.kr</email></author><category term="CTF/Wargame" /><category term="CTF" /><category term="Wargame" /><category term="학습법" /><summary type="html"><![CDATA[워게임 문제를 무작정 풀기 전에 문제 조건과 제공 파일을 정리하는 기본 절차입니다.]]></summary></entry><entry><title type="html">Bug Bounty 학습 노트: 범위 확인부터</title><link href="http://localhost:4000/bug%20bounty/bug-bounty-method/" rel="alternate" type="text/html" title="Bug Bounty 학습 노트: 범위 확인부터" /><published>2026-10-25T15:00:00+09:00</published><updated>2026-10-25T15:00:00+09:00</updated><id>http://localhost:4000/bug%20bounty/bug-bounty-method</id><content type="html" xml:base="http://localhost:4000/bug%20bounty/bug-bounty-method/"><![CDATA[<h2 id="테스트-전에-범위를-확인하기">테스트 전에 범위를 확인하기</h2>
+
+<p>버그 바운티 프로그램마다 허용되는 대상과 테스트 방식이 다릅니다. 도메인, 제외 대상, 자동화 도구 사용 조건, 데이터 접근 제한을 먼저 확인해야 합니다.</p>
+
+<h2 id="기록할-항목">기록할 항목</h2>
+
+<ul>
+  <li>프로그램의 허용 범위와 금지된 테스트</li>
+  <li>재현에 필요한 최소 단계</li>
+  <li>영향받는 기능과 보안상 영향</li>
+  <li>민감한 데이터가 노출되지 않도록 한 검증 방법</li>
+  <li>프로그램의 신고 양식과 공개 정책</li>
+</ul>
+
+<h2 id="책임-있는-제보">책임 있는 제보</h2>
+
+<p>실제 서비스에 피해를 주거나 허가 범위를 벗어나는 테스트는 하지 않습니다. 취약점을 확인했다면 영향 범위를 최소화하고, 프로그램이 안내하는 절차에 따라 명확하게 보고합니다.</p>]]></content><author><name>박민승</name><email>pms0602@hufs.ac.kr</email></author><category term="Bug Bounty" /><category term="Bug Bounty" /><category term="Web Security" /><category term="Responsible Disclosure" /><summary type="html"><![CDATA[버그 바운티를 시작할 때 프로그램 범위와 테스트 허용 조건을 먼저 확인해야 하는 이유입니다.]]></summary></entry><entry><title type="html">기술 문서를 오래 남는 노트로 바꾸는 법</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8/%EA%B8%B0%EC%88%A0%EB%AC%B8%EC%84%9C/technical-notes/" rel="alternate" type="text/html" title="기술 문서를 오래 남는 노트로 바꾸는 법" /><published>2026-10-24T13:00:00+09:00</published><updated>2026-10-24T13:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8/%EA%B8%B0%EC%88%A0%EB%AC%B8%EC%84%9C/technical-notes</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8/%EA%B8%B0%EC%88%A0%EB%AC%B8%EC%84%9C/technical-notes/"><![CDATA[<h2 id="요약보다-구조를-남기기">요약보다 구조를 남기기</h2>
+
+<p>좋은 기술 노트는 문서의 문장을 그대로 옮긴 것이 아니라, 나중에 다시 봤을 때 개념과 사용 맥락을 떠올릴 수 있도록 정리한 기록입니다.</p>
+
+<h2 id="추천하는-구성">추천하는 구성</h2>
+
+<ol>
+  <li><strong>문제:</strong> 어떤 상황에서 이 개념이 필요한가?</li>
+  <li><strong>핵심 개념:</strong> 무엇이며 어떤 원리로 동작하는가?</li>
+  <li><strong>예시:</strong> 짧은 코드나 구체적인 상황에서 어떻게 쓰이는가?</li>
+  <li><strong>주의점:</strong> 흔한 실수나 한계는 무엇인가?</li>
+  <li><strong>출처:</strong> 공식 문서와 추가로 읽을 자료는 무엇인가?</li>
+</ol>
+
+<h2 id="markdown-예시">Markdown 예시</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!"</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">greet</span><span class="p">(</span><span class="s">"world"</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>코드에는 동작 결과뿐 아니라 중요한 줄이 왜 필요한지도 함께 설명하면 좋습니다.</p>]]></content><author><name>박민승</name><email>pms0602@hufs.ac.kr</email></author><category term="블로그/기술문서" /><category term="기술문서" /><category term="Markdown" /><category term="학습" /><summary type="html"><![CDATA[문서를 그대로 옮기는 대신 핵심 개념과 적용 맥락을 중심으로 정리하는 방법입니다.]]></summary></entry><entry><title type="html">논문과 컨퍼런스를 읽는 나만의 체크리스트</title><link href="http://localhost:4000/%EB%85%BC%EB%AC%B8/%EC%BB%A8%ED%8D%BC%EB%9F%B0%EC%8A%A4/paper-conference/" rel="alternate" type="text/html" title="논문과 컨퍼런스를 읽는 나만의 체크리스트" /><published>2026-10-23T11:00:00+09:00</published><updated>2026-10-23T11:00:00+09:00</updated><id>http://localhost:4000/%EB%85%BC%EB%AC%B8/%EC%BB%A8%ED%8D%BC%EB%9F%B0%EC%8A%A4/paper-conference</id><content type="html" xml:base="http://localhost:4000/%EB%85%BC%EB%AC%B8/%EC%BB%A8%ED%8D%BC%EB%9F%B0%EC%8A%A4/paper-conference/"><![CDATA[<h2 id="읽기-전에-질문-정하기">읽기 전에 질문 정하기</h2>
+
+<p>자료를 읽기 전에 해결하려는 문제와 내가 알고 싶은 내용을 한두 문장으로 적습니다. 질문이 있으면 핵심 주장과 주변 설명을 구분하기 쉽습니다.</p>
+
+<h2 id="읽고-나서-정리할-것">읽고 나서 정리할 것</h2>
+
+<ul>
+  <li>연구가 해결하려는 문제</li>
+  <li>기존 방법의 한계</li>
+  <li>제안한 방법의 핵심 아이디어</li>
+  <li>실험 환경과 비교 기준</li>
+  <li>결과가 보여 주는 것과 보여 주지 못하는 것</li>
+  <li>내 프로젝트에 적용할 수 있는 아이디어</li>
+</ul>
+
+<h2 id="비판적으로-읽기">비판적으로 읽기</h2>
+
+<p>결과 수치만 보기보다 데이터셋, 평가 지표, 비교 대상, 재현 가능성을 함께 살펴봅니다. 발표를 들었다면 인상적인 주장과 직접 확인해야 할 자료를 구분해 기록합니다.</p>]]></content><author><name>박민승</name><email>pms0602@hufs.ac.kr</email></author><category term="논문/컨퍼런스" /><category term="논문" /><category term="컨퍼런스" /><category term="리서치" /><summary type="html"><![CDATA[논문과 기술 발표를 읽고 들은 뒤 핵심 내용을 재구성하기 위한 체크리스트입니다.]]></summary></entry><entry><title type="html">공모전과 자격증을 학습 경험으로 연결하기</title><link href="http://localhost:4000/%EA%B3%B5%EB%AA%A8%EC%A0%84/%EC%9E%90%EA%B2%A9%EC%A6%9D/competitions-certifications/" rel="alternate" type="text/html" title="공모전과 자격증을 학습 경험으로 연결하기" /><published>2026-10-22T16:00:00+09:00</published><updated>2026-10-22T16:00:00+09:00</updated><id>http://localhost:4000/%EA%B3%B5%EB%AA%A8%EC%A0%84/%EC%9E%90%EA%B2%A9%EC%A6%9D/competitions-certifications</id><content type="html" xml:base="http://localhost:4000/%EA%B3%B5%EB%AA%A8%EC%A0%84/%EC%9E%90%EA%B2%A9%EC%A6%9D/competitions-certifications/"><![CDATA[<h2 id="목표를-작게-나누기">목표를 작게 나누기</h2>
+
+<p>공모전이나 자격증을 준비할 때는 최종 목표만 적기보다 주간 학습 목표와 확인 기준을 함께 세웁니다.</p>
+
+<h2 id="결과보다-과정-기록하기">결과보다 과정 기록하기</h2>
+
+<ul>
+  <li>참가 목적과 해결하고 싶은 문제</li>
+  <li>팀에서 맡은 역할과 의사결정</li>
+  <li>사용한 기술과 선택한 이유</li>
+  <li>실패한 접근과 개선 과정</li>
+  <li>결과물, 피드백, 다음에 보완할 점</li>
+</ul>
+
+<h2 id="포트폴리오로-이어가기">포트폴리오로 이어가기</h2>
+
+<p>공개할 수 있는 결과물은 저장소나 문서로 정리하고, 보안상 공개하면 안 되는 정보는 제외합니다. 경험을 설명할 때는 내가 실제로 한 일과 배운 점을 구체적으로 작성합니다.</p>]]></content><author><name>박민승</name><email>pms0602@hufs.ac.kr</email></author><category term="공모전/자격증" /><category term="공모전" /><category term="자격증" /><category term="포트폴리오" /><summary type="html"><![CDATA[수상이나 취득 여부뿐 아니라 준비 과정에서 쌓은 역량을 기록하는 방법입니다.]]></summary></entry></feed>
