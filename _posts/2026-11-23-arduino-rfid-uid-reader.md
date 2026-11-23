@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "아두이노 RFID UID 인식기 - 등록된 카드인지 확인하는 인증 시스템"
-date: 2026-11-23 14:00:00 +0900
+date: 2026-11-23 13:20:00 +0900
 categories: [개발]
 tags: [Arduino, RFID, RC522, UID, 임베디드, 하드웨어]
 ---
